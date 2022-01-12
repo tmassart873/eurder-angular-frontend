@@ -1,18 +1,27 @@
-<main>
-  <section>
+<section>
+  <div class="container">
     <h3 class="section-title">Items</h3>
-    <ul *ngFor="let item of items" class="card-list">
-      <li class="card">
-        <div class="card-title">{{item.name}}</div>
-        <img class="card-image" src="../assets/images/item-image.png" alt="item image">
-        <div class="card-footer">
-          <div>Price: &euro; {{item.price}}</div>
-          <div class="stock">
-            <span>High</span>
-            <img class="icon" src="../assets/images/warning-icon.png" alt="warning">
-          </div>
+    <div class="form-group">
+      <input type="search"
+             id="searchBar"
+             name="searchBar"
+             class="form-control"
+             placeholder="Filter by item..."
+             [(ngModel)]="searchedItem">
+    </div>
+  </div>
+  <ul class="card-list">
+    <li *ngFor="let item of items | nameFilter: searchText" class="card">
+      <div class="card-title">{{item.name}}</div>
+      <img class="card-image" src="/assets/images/item-image.png" alt="item image">
+      <div class="card-footer">
+        <div>Price: &euro; {{item.price}}</div>
+        <div class="stock">
+          <span>{{item.stockUrgency.substring(6)}}</span>
+          <img class="icon" [src]="switchWarningIcon(item)" alt="warning">
         </div>
-      </li>
-    </ul>
-  </section>
-</main>
+      </div>
+    </li>
+  </ul>
+</section>
+

@@ -3,4 +3,7 @@ export interface Item {
   description: string;
   price: number;
   amountOfStock: number;
+  stockUrgency: string;
 }
+
+

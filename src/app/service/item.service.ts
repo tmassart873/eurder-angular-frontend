@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {Item} from "../model/Item";
 import {environment} from "../../environments/environment";
 
@@ -16,7 +16,6 @@ export class ItemService {
   }
 
   getItems():Observable<any>{
-    console.log("items");
     return this.http.get<Item[]>(this.url);
   }
 }

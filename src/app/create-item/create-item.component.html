@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order</title>
+  <link href='/styles.css' rel='stylesheet'/>
+</head>
+<main>
+  <section>
+    <h3 class="section-title" style="border-bottom: darkgray solid 1px;padding-bottom: 1em; margin-bottom: 1em">Create Item</h3>
+    <form [formGroup]="addItemForm">
+      <div class="row">
+        <div class="col-1">
+          <label class="form-label" for="name">Name</label>
+          <input class="form-control" id="name" type="text" formControlName="name"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <label class="form-label" for="description">Description</label>
+          <input class="form-control" id="description" type="text" formControlName="description"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <label class="form-label" for="price">Price</label>
+          <input class="form-control" id="price" type="number" formControlName="price"/>
+        </div>
+        <div class="col-1">
+          <label class="form-label" for="amountOfStock">Amount in stock</label>
+          <input class="form-control" id="amountOfStock" type="number" formControlName="amountOfStock"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <button class="col-4 btn btn-create" type="submit" (click)="addItem()">CREATE</button>
+        <button class="col-1 btn" (click)="cancel()">CANCEL</button>
+      </div>
+    </form>
+  </section>
+</main>
+

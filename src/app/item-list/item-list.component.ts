@@ -13,6 +13,7 @@ export class ItemListComponent implements OnInit {
   items: Item[] = [];
   @Input() searchedItem!: string;
 
+
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
@@ -27,6 +28,9 @@ export class ItemListComponent implements OnInit {
 
   switchWarningIcon(item:Item):string {
     if(item.stockUrgency === 'STOCK_LOW'){
+      return "./assets/images/warning-icon-red.png";
+    }
+    else if(item.stockUrgency === 'STOCK_MEDIUM'){
       return "./assets/images/warning-icon-orange.PNG";
     }
     return "./assets/images/warning-icon.png";

@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {map, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {Item} from "../model/Item";
 import {environment} from "../../environments/environment";
+import {Router} from "@angular/router";
 import {Location} from "@angular/common";
 
 @Injectable({
@@ -12,11 +13,11 @@ export class ItemService {
 
   private url: string;
 
-  constructor(private http: HttpClient, private location: Location) {
+  constructor(private http: HttpClient, private router: Router, private location:Location) {
     this.url = `${environment.backendUrl}/items`
   }
 
-  getItems():Observable<any>{
+  getItems(): Observable<any> {
     return this.http.get<Item[]>(this.url);
   }
 
@@ -25,7 +26,15 @@ export class ItemService {
 
   }
 
-  cancel(){
+  getItemById(id: string): Observable<Item>{
+    return this.http.get<Item>(`${this.url}/${id}`);
+  }
+
+  cancel() {
+    this.router.navigate(['/items']);
+  }
+
+  back(){
     this.location.back();
   }
 }

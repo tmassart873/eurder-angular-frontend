@@ -1,0 +1,38 @@
+<section>
+  <h3 class="section-title"
+      style="border-bottom: darkgray solid 1px;padding-bottom: 1em; margin-bottom: 1em">
+    Item<span class="greyed-out"> {{item.id}}</span>
+  </h3>
+  <div>
+    <label class="greyed-out">Name</label>
+    <div class="grey-box">
+      {{item.name}}
+    </div>
+  </div>
+  <div>
+    <label class="greyed-out">Description</label>
+    <div class="grey-box" style="height: calc(5.5em + .75rem + 2px);">
+      {{item.description}}
+    </div>
+  </div>
+  <div class="row" id="input-price-and-stock">
+    <div class="col-2">
+      <label class="form-label">Price</label>
+      <div class="grey-box">
+        {{item.price}}
+      </div>
+    </div>
+    <div class="col-1">
+      <label class="form-label">Amount in stock</label>
+      <div class="grey-box">
+        {{item.amountOfStock}}
+      </div>
+    </div>
+  </div>
+  <div class="buttons">
+    <button class="btn" id="edit">EDIT</button>
+    <button class="btn" id="back" (click)="back()">BACK</button>
+  </div>
+</section>
+
+

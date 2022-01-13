@@ -12,8 +12,8 @@
   </div>
   <ul class="card-list">
     <li *ngFor="let item of items | nameFilter: searchedItem" class="card">
-      <div class="card-title">{{item.name}}</div>
-      <img class="card-image" src="/assets/images/item-image.png" alt="item image">
+      <div class="card-title" routerLink="/item-detail/{{item.id}}" >{{item.name}}</div>
+      <img class="card-image" src="/assets/images/item-image.png" alt="item image" routerLink="/item-detail/{{item.id}}">
       <div class="card-footer">
         <div>Price: &euro; {{item.price}}</div>
         <div class="stock">

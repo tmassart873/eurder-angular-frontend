@@ -13,29 +13,54 @@
         <div class="col-1">
           <label class="form-label" for="name">Name</label>
           <input class="form-control" id="name" type="text" formControlName="name"/>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.errors?.['required']" class="text-error">
+              Name is required.
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-1">
           <label class="form-label" for="description">Description</label>
-          <input class="form-control" id="description" type="text" formControlName="description"/>
+          <textarea class="form-control" id="description" type="text" formControlName="description"></textarea>
+          <div *ngIf="description.invalid && (description.dirty || description.touched)">
+            <div *ngIf="description.errors?.['maxlength']" class="text-error">
+              Description text can only be 255 characters long.
+            </div>
+            <div *ngIf="description.errors?.['required']" class="text-error">
+              Description is required.
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-1">
+      <app-char-counter [counterValue]="description.value.length" [maxVal]="255"></app-char-counter>
+      <div class="row" id ="input-price-and-stock">
+        <div>
           <label class="form-label" for="price">Price</label>
           <input class="form-control" id="price" type="number" formControlName="price"/>
+          <div *ngIf="price.invalid && (price.dirty || price.touched)">
+            <div *ngIf="price.errors?.['min']" class="text-error">
+              Price cannot be negative.
+            </div>
+          </div>
         </div>
         <div class="col-1">
           <label class="form-label" for="amountOfStock">Amount in stock</label>
           <input class="form-control" id="amountOfStock" type="number" formControlName="amountOfStock"/>
+          <div *ngIf="amountOfStock.invalid && (amountOfStock.dirty || amountOfStock.touched)">
+            <div *ngIf="amountOfStock.errors?.['min']" class="text-error">
+              The stock amount cannot be negative.
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="row">
-        <button class="col-4 btn btn-create" type="submit" (click)="addItem()">CREATE</button>
+        <button class="col-4 btn btn-create" type="submit" (click)="addItem()" [disabled]="!addItemForm.valid">CREATE</button>
         <button class="col-1 btn" (click)="cancel()">CANCEL</button>
       </div>
+
     </form>
   </section>
 </main>

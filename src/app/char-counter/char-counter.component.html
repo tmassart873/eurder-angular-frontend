@@ -1,0 +1,4 @@
+<div id="charCounter">
+  <p *ngIf="counterValue <= maxVal">{{maxVal - counterValue}}/{{maxVal}}</p>
+  <p *ngIf="counterValue > maxVal" style="color: #f44336">0/{{maxVal}}</p>
+</div>

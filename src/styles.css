@@ -76,7 +76,7 @@ form {
   display: flex;
   flex-direction: column;
   margin: auto;
-  max-width: 500px;
+  max-width: 100%;
 }
 
 .row {
@@ -88,6 +88,12 @@ form {
 
 .col-1 {
   flex: 1;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.col-2 {
+  flex: 0.5;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -118,6 +124,10 @@ form {
   padding-right: 0.75rem;
   padding-bottom: 0.375rem;
   padding-left: 0.75rem;
+}
+#description{
+  width: 100%;
+  height: calc(5.5em + .75rem + 2px);
 }
 
 .btn:not(:disabled):not(.disabled) {
@@ -154,6 +164,8 @@ form {
 .card {
   list-style-type: none;
   margin: 2rem;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .card-title {
@@ -162,6 +174,11 @@ form {
 
   text-align: center;
   margin-bottom: .5rem;
+}
+
+.card-title:hover{
+  background-color: crimson;
+  color: white;
 }
 
 .card-image {
@@ -203,6 +220,51 @@ form {
   font-weight: 500;
 }
 
+#input-price-and-stock{
+  width: 40%;
+}
 
+#charCounter{
+  text-align: right;
+}
+
+.text-error{
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  margin-bottom: 10px;
+}
+.greyed-out{
+  color: lightgrey;
+}
+
+.grey-box{
+  max-width: 100%;
+  border: solid black 1px;
+  background-color: papayawhip;
+  margin-top:10px;
+  margin-bottom: 1em;
+  padding: 5px;
+}
+
+#edit{
+  border: black solid 1px;
+  background-color: lightskyblue;
+  color: white;
+  width: 20%;
+  height: 50px;
+}
+
+#back{
+  border: black solid 1px;
+  background-color: papayawhip;
+  color: black;
+  width: 10%;
+  height: 50px;
+}
+
+.buttons{
+  text-align: right;
+}
 
 

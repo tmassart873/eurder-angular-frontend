@@ -1,9 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
-import {FooterComponent} from "./layout/footer/footer.component";
 import {ItemListComponent} from "./item-list/item-list.component";
+import {CreateItemComponent} from "./create-item/create-item.component";
 
-const routes: Routes = [{path: '', component:ItemListComponent}];
+const routes: Routes = [
+  {path: '', component: ItemListComponent},
+  {path: 'items', component: ItemListComponent},
+  {path: 'create-item', component: CreateItemComponent}];
 
 @NgModule({
   declarations: [],

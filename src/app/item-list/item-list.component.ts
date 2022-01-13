@@ -11,8 +11,7 @@ import {Observable} from "rxjs";
 export class ItemListComponent implements OnInit {
 
   items: Item[] = [];
-  searchedItem!: Item;
-  searchText!: string;
+  @Input() searchedItem!: string;
 
   constructor(private itemService: ItemService) { }
 

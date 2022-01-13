@@ -24,6 +24,10 @@ export class ItemDetailComponent implements OnInit {
     this.itemService.getItemById(itemId).subscribe(item => this.item = item);
   }
 
+  updateItem(){
+    this.itemService.updateItem(this.item).subscribe();
+  }
+
   back(){
     this.itemService.back();
   }

@@ -30,6 +30,10 @@ export class ItemService {
     return this.http.get<Item>(`${this.url}/${id}`);
   }
 
+  updateItem(item: Item): Observable<Item> {
+    return this.http.put<Item>(this.url, item);
+  }
+
   cancel() {
     this.router.navigate(['/items']);
   }

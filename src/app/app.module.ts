@@ -11,6 +11,7 @@ import {NameFilterPipe} from './name-filter.pipe';
 import { CreateItemComponent } from './create-item/create-item.component';
 import { CharCounterComponent } from './char-counter/char-counter.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { UpdateItemComponent } from './update-item/update-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
     NameFilterPipe,
     CreateItemComponent,
     CharCounterComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    UpdateItemComponent
   ],
   imports: [
     BrowserModule,

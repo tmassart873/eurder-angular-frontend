@@ -13,7 +13,7 @@ export class ItemService {
 
   private url: string;
 
-  constructor(private http: HttpClient, private router: Router, private location:Location) {
+  constructor(private http: HttpClient, private router: Router, private location: Location) {
     this.url = `${environment.backendUrl}/items`
   }
 
@@ -26,19 +26,19 @@ export class ItemService {
 
   }
 
-  getItemById(id: string): Observable<Item>{
+  getItemById(id: string): Observable<Item> {
     return this.http.get<Item>(`${this.url}/${id}`);
   }
 
-  updateItem(item: Item): Observable<Item> {
-    return this.http.put<Item>(this.url, item);
+  updateItem(id: string, value:any): Observable<void> {
+    return this.http.put<void>(`${this.url}/${id}`, value);
   }
 
   cancel() {
     this.router.navigate(['/items']);
   }
 
-  back(){
+  back() {
     this.location.back();
   }
 }

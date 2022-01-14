@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order</title>
+  <link href='/styles.css' rel='stylesheet'/>
+</head>
+<main>
+  <section>
+    <h3 class="section-title" style="border-bottom: darkgray solid 1px;padding-bottom: 1em; margin-bottom: 1em">Item <span class="greyed-out">{{item.id}}</span></h3>
+    <form [formGroup]="updateItemForm">
+      <div class="row">
+        <div class="col-1">
+          <label class="form-label" for="name">Name</label>
+          <input class="form-control" id="name" type="text" formControlName="name" [innerText]="item.name"/>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.errors?.['required']" class="text-error">
+              Name is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <label class="form-label" for="description">Description</label>
+          <textarea class="form-control" id="description" type="text" formControlName="description" placeholder="{{item.description}}"></textarea>
+          <div *ngIf="description.invalid && (description.dirty || description.touched)">
+            <div *ngIf="description.errors?.['maxlength']" class="text-error">
+              Description text can only be 255 characters long.
+            </div>
+            <div *ngIf="description.errors?.['required']" class="text-error">
+              Description is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-char-counter [counterValue]="description.value.length" [maxVal]="255"></app-char-counter>
+      <div class="row" id ="input-price-and-stock">
+        <div>
+          <label class="form-label" for="price">Price</label>
+          <input class="form-control" id="price" type="number" formControlName="price" placeholder="{{item.price}}"/>
+          <div *ngIf="price.invalid && (price.dirty || price.touched)">
+            <div *ngIf="price.errors?.['min']" class="text-error">
+              Price cannot be negative.
+            </div>
+          </div>
+        </div>
+        <div class="col-1">
+          <label class="form-label" for="amountOfStock">Amount in stock</label>
+          <input class="form-control" id="amountOfStock" type="number" formControlName="amountOfStock" placeholder="{{item.amountOfStock}}"/>
+          <div *ngIf="amountOfStock.invalid && (amountOfStock.dirty || amountOfStock.touched)">
+            <div *ngIf="amountOfStock.errors?.['min']" class="text-error">
+              The stock amount cannot be negative.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <button class="col-4 btn btn-create" type="submit" (click)="updateItem()" [disabled]="!updateItemForm.valid">UPDATE</button>
+        <button class="col-1 btn" (click)="cancel()">CANCEL</button>
+      </div>
+
+    </form>
+  </section>
+</main>
+

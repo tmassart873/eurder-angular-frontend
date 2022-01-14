@@ -86,11 +86,19 @@ form {
   margin-bottom: .5rem;
 }
 
+app-customer-list.row{
+  border-left: solid black 1px;
+  border-right: solid black 1px;
+  border-bottom: solid black 1px;
+  padding: 1em;
+}
+
 .col-1 {
   flex: 1;
   padding-left: 5px;
   padding-right: 5px;
 }
+
 
 .col-2 {
   flex: 0.5;
@@ -213,6 +221,7 @@ form {
   border-bottom: darkgrey solid 1px;
   margin: 1em;
   padding: 1em;
+  padding-top: 0.25em;
 }
 
 .section-title {
@@ -266,5 +275,37 @@ form {
 .buttons{
   text-align: right;
 }
+
+table{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td,th{
+  border-collapse: collapse;
+  border-bottom: black solid 1px;
+  padding: 5px;
+}
+
+th{
+  text-align: left;
+  background-color: lightblue;
+}
+
+table {
+  width: 100%;
+}
+.id-col{
+  width: 30%;
+}
+.new-customer-col{
+  width: 15%;
+  text-align: right;
+}
+
+
+
+
+
 
 

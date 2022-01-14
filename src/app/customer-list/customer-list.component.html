@@ -1,0 +1,48 @@
+<section>
+  <div class="container">
+    <h3 class="section-title">Customers</h3>
+    <div class="form-group">
+      <input type="search"
+             id="searchBar"
+             name="searchBar"
+             class="form-control"
+             placeholder="Filter by last name..."
+             [(ngModel)]="searchedCustomerLastName">
+    </div>
+  </div>
+
+  <main>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+        <th>
+          FIRSTNAME
+        </th>
+        <th>
+          LASTNAME
+        </th>
+        <th class="new-customer-col">
+          <button class="col-1 btn">NEW CUSTOMER</button>
+        </th>
+      </tr>
+      <tr *ngFor="let customer of customers">
+        <td class="id-col">
+          {{customer.id}}
+        </td>
+        <td>
+          {{customer.firstname}}
+        </td>
+        <td>
+          {{customer.lastname}}
+        </td>
+        <td class="new-customer-col">
+          <button class="col-1 btn">VIEW</button>
+          <button class="col-1 btn">EDIT</button>
+        </td>
+      </tr>
+    </table>
+  </main>
+</section>
+

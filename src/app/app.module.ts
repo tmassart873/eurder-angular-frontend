@@ -12,6 +12,7 @@ import { CreateItemComponent } from './create-item/create-item.component';
 import { CharCounterComponent } from './char-counter/char-counter.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { UpdateItemComponent } from './update-item/update-item.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UpdateItemComponent } from './update-item/update-item.component';
     CreateItemComponent,
     CharCounterComponent,
     ItemDetailComponent,
-    UpdateItemComponent
+    UpdateItemComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,

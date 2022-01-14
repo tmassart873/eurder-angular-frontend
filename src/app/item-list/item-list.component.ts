@@ -21,8 +21,6 @@ export class ItemListComponent implements OnInit {
   }
 
   getItems(): void{
-    console.log("items");
-    console.log(this.items);
     this.itemService.getItems().subscribe(items => this.items = items);
   }
 
@@ -35,6 +33,4 @@ export class ItemListComponent implements OnInit {
     }
     return "./assets/images/warning-icon.png";
   }
-
-
 }

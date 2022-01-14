@@ -16,7 +16,8 @@ export class UpdateItemComponent implements OnInit {
 
   constructor(private itemService: ItemService,
               private formBuilder: FormBuilder,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private router:Router) {
   }
 
   updateItemForm = this.formBuilder.group({
@@ -37,7 +38,8 @@ export class UpdateItemComponent implements OnInit {
 
   updateItem(){
     this.itemService.updateItem(this.activatedRoute.snapshot.paramMap.get('id')!, this.updateItemForm.value).subscribe();
-    window.alert(`Successfully updated ${this.item.name} with id = ${this.item.id}`)
+    this.router.navigate([`item-detail/${this.item.id}`]);
+    // window.alert(`Successfully updated ${this.item.name} with id = ${this.item.id}`)
   }
 
   cancel() {

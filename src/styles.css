@@ -51,7 +51,7 @@ nav > a {
   margin: auto;
   border-width: 1px;
   border-style: solid;
-  border-color: blue;
+  border-color: lightblue;
 
   padding-left: 1em;
   padding-right: 1em;
@@ -166,7 +166,7 @@ app-customer-list.row{
 
 .btn-create {
   color: white;
-  background: limegreen;
+  background-color: lightblue;
 }
 
 .card {
@@ -185,7 +185,7 @@ app-customer-list.row{
 }
 
 .card-title:hover{
-  background-color: crimson;
+  background-color: lightblue;
   color: white;
 }
 

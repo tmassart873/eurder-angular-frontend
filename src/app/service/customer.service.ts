@@ -23,7 +23,7 @@ export class CustomerService {
   }
 
   addCustomer(customer: Customer): Observable<Customer>{
-
+    console.log(customer);
     return this.http.post<Customer>(this.url, customer);
   }
 }

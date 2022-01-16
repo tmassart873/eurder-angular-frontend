@@ -13,6 +13,8 @@ import { CharCounterComponent } from './char-counter/char-counter.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { UpdateItemComponent } from './update-item/update-item.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+import { LastNameFilterPipe } from './last-name-filter.pipe';
+import { CreateCustomerComponent } from './create-customer/create-customer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
     CharCounterComponent,
     ItemDetailComponent,
     UpdateItemComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    LastNameFilterPipe,
+    CreateCustomerComponent
   ],
   imports: [
     BrowserModule,

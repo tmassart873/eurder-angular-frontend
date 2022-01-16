@@ -24,10 +24,10 @@
           LASTNAME
         </th>
         <th class="new-customer-col">
-          <button class="col-1 btn">NEW CUSTOMER</button>
+          <button class="col-1 btn" routerLink="/create-customer">NEW CUSTOMER</button>
         </th>
       </tr>
-      <tr *ngFor="let customer of customers">
+      <tr *ngFor="let customer of customers | lastNameFilter: searchedCustomerLastName">
         <td class="id-col">
           {{customer.id}}
         </td>

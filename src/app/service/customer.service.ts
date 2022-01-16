@@ -5,6 +5,7 @@ import {Location} from "@angular/common";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 import {Customer} from "../model/Customer";
+import {Item} from "../model/Item";
 
 @Injectable({
   providedIn: 'root'
@@ -21,4 +22,8 @@ export class CustomerService {
     return this.http.get<Customer[]>(this.url);
   }
 
+  addCustomer(customer: Customer): Observable<Customer>{
+
+    return this.http.post<Customer>(this.url, customer);
+  }
 }

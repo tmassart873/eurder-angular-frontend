@@ -5,6 +5,7 @@ import {CreateItemComponent} from "./create-item/create-item.component";
 import {ItemDetailComponent} from "./item-detail/item-detail.component";
 import {UpdateItemComponent} from "./update-item/update-item.component";
 import {CustomerListComponent} from "./customer-list/customer-list.component";
+import {CreateCustomerComponent} from "./create-customer/create-customer.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'items', pathMatch:'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'create-item', component: CreateItemComponent},
   {path:'item-detail/:id',component:ItemDetailComponent},
   {path:'update-item/:id',component:UpdateItemComponent},
-  {path:'customers',component:CustomerListComponent}
+  {path:'customers',component:CustomerListComponent},
+  {path:'create-customer',component:CreateCustomerComponent}
 ];
 
 

@@ -1,8 +1,9 @@
 <section>
-  <h3 class="section-title"
-      style="border-bottom: darkgray solid 1px;padding-bottom: 1em; margin-bottom: 1em">
-    Item<span class="greyed-out"> {{item.id}}</span>
-  </h3>
+  <div class="container">
+    <h3 class="section-title">Item<span class="greyed-out"> {{item.id}}</span>
+    </h3>
+    <button class="btn-basket">VIEW BASKET</button>
+  </div>
   <div>
     <label class="greyed-out">Name</label>
     <div class="grey-box">
@@ -30,8 +31,13 @@
     </div>
   </div>
   <div class="buttons">
-    <button class="btn" id="edit" routerLink="/update-item/{{item.id}}" >EDIT</button>
-    <button class="btn" id="back" (click)="back()">BACK</button>
+    <div class="left-group">
+      <button class="btn-basket" id="add-to-basket" style="text-align: left">ADD TO BASKET</button>
+    </div>
+   <div class="right-group">
+     <button class="btn" id="edit" routerLink="/update-item/{{item.id}}" >EDIT</button>
+     <button class="btn" id="back" (click)="back()">BACK</button>
+   </div>
   </div>
 </section>
 

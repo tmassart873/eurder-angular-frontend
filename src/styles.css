@@ -164,6 +164,24 @@ app-customer-list.row{
   margin-left: .375rem;
 }
 
+.btn-basket{
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  padding-top: 0.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+
+  user-select: none;
+
+  margin-left: .375rem;
+
+  background-color: darkorange;
+  color: white;
+  border-color: orangered;
+}
+
 .btn-create {
   color: white;
   background-color: lightblue;
@@ -271,9 +289,21 @@ app-customer-list.row{
   width: 10%;
   height: 50px;
 }
-
 .buttons{
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-group {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.right-group {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
 }
 
 table{

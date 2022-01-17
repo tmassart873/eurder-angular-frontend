@@ -86,8 +86,8 @@
       </div>
     </div>
     <div class="row">
-      <button class="col-4 btn btn-create" type="submit">EDIT</button>
-      <button class="col-1 btn">CANCEL</button>
+      <button class="col-4 btn btn-create" type="submit" routerLink="/update-customer/{{customer.id}}">EDIT</button>
+      <button class="col-1 btn" (click)="back()">BACK</button>
     </div>
   </section>
 </main>

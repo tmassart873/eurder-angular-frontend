@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from "../model/Customer";
 import {CustomerService} from "../service/customer.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Observable} from "rxjs";
 
 @Component({
@@ -13,7 +13,7 @@ export class CustomerDetailComponent implements OnInit {
 
   customer$!: Observable<Customer>
 
-  constructor(private customerService: CustomerService, private activatedRoute: ActivatedRoute) {
+  constructor(private customerService: CustomerService, private activatedRoute: ActivatedRoute, private router:Router) {
   }
 
   ngOnInit(): void {
@@ -25,4 +25,7 @@ export class CustomerDetailComponent implements OnInit {
     this.customer$ = this.customerService.getCustomerById(id);
   }
 
+  back() {
+    this.customerService.back();
+  }
 }

@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Observable, tap} from "rxjs";
 import {Customer} from "../model/Customer";
+import {Location} from "@angular/common";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class CustomerService {
 
   private url: string;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private location:Location) {
     this.url = `${environment.backendUrl}/customers`
   }
 
@@ -26,5 +27,13 @@ export class CustomerService {
 
   getCustomerById(id: string): Observable<Customer> {
     return this.http.get<Customer>(`${this.url}/${id}`).pipe(tap(customer => console.log(customer)));
+  }
+
+  updateItem(id: string, value: any): Observable<void> {
+    return this.http.put<void>(`${this.url}/${id}`, value);
+  }
+
+  back() {
+    this.location.back();
   }
 }

@@ -7,7 +7,7 @@
 </head>
 <body>
 <main>
-  <section>
+  <section *ngIf="customer$ | async as customer">
     <h3 class="section-title" style="border-bottom: darkgray solid 1px;padding-bottom: 1em; margin-bottom: 1em">
       Customer {{customer.id}}</h3>
     <div class="row">
@@ -24,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div class="row" formGroupName="email">
+    <div class="row">
       <div class="col-1">
         <label class="form-label">Email</label>
         <div class="grey-box">
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div class="row" formGroupName="phoneNumber">
+    <div class="row">
       <div class="col-1">
         <label class="form-label">Phone number (mobile)</label>
         <div class="grey-box">
@@ -56,7 +56,7 @@
         </div>
       </div>
     </div>
-    <div class="row" formGroupName="address">
+    <div class="row">
       <div class="col-4">
         <label class="form-label">Street</label>
         <div class="grey-box">
@@ -70,7 +70,7 @@
         </div>
       </div>
     </div>
-    <div class="row" formGroupName="address">
+    <div class="row">
       <div class="col-1">
         <label class="form-label">Postalcode</label>
         <div class="grey-box">

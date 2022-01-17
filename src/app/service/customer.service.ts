@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
-import {Observable} from "rxjs";
+import {Observable, tap} from "rxjs";
 import {Customer} from "../model/Customer";
 
 @Injectable({
@@ -25,6 +25,6 @@ export class CustomerService {
   }
 
   getCustomerById(id: string): Observable<Customer> {
-    return this.http.get<Customer>(`${this.url}/${id}`);
+    return this.http.get<Customer>(`${this.url}/${id}`).pipe(tap(customer => console.log(customer)));
   }
 }

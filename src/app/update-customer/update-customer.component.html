@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order</title>
+  <link href='/styles.css' rel='stylesheet'/>
+</head>
+<body>
+<main>
+  <section>
+    <h3 class="section-title" style="border-bottom: darkgray solid 1px;padding-bottom: 1em; margin-bottom: 1em">Create
+      Customer</h3>
+    <form [formGroup]="updateCustomerForm">
+      <div class="row">
+        <div class="col-1">
+          <label class="form-label" for="firstname">Firstname</label>
+          <input class="form-control" id="firstname" type="text" formControlName="firstname"/>
+          <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
+            <div *ngIf="firstname.errors?.['required']" class="text-error">
+              First name is required.
+            </div>
+          </div>
+        </div>
+        <div class="col-1">
+          <label class="form-label" for="lastName">Lastname</label>
+          <input class="form-control" id="lastName" type="text" formControlName="lastname"/>
+          <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
+            <div *ngIf="lastname.errors?.['required']" class="text-error">
+              Last name is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" formGroupName="email">
+        <div class="col-1">
+          <label class="form-label" for="localPart">Email</label>
+          <input class="form-control" id="localPart" type="text" formControlName="localPart"/>
+          <div *ngIf="localPart.invalid && (localPart.dirty || localPart.touched)">
+            <div *ngIf="localPart.errors?.['required']" class="text-error">
+              Username is required.
+            </div>
+          </div>
+        </div>
+        <div>
+          <label class="form-label" for="localPart" style="color: white">@</label>
+          <span style="font-size: 30px; border: black solid 1px">@</span>
+        </div>
+        <div class="col-1">
+          <label class="form-label" for="domain" style="color: white">Domain</label>
+          <input class="form-control" id="domain" type="text" formControlName="domain"/>
+          <div *ngIf="domain.invalid && (domain.dirty || domain.touched)">
+            <div *ngIf="domain.errors?.['required']" class="text-error">
+              Domain is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" formGroupName="phoneNumber">
+        <div class="col-1">
+          <label class="form-label" for="countryCallingCode">Phone number (mobile)</label>
+          <input class="form-control" id="countryCallingCode" type="text" formControlName="countryCallingCode"/>
+          <div *ngIf="countryCallingCode.invalid && (countryCallingCode.dirty || countryCallingCode.touched)">
+            <div *ngIf="countryCallingCode.errors?.['required']" class="text-error">
+              Country calling code is required.
+            </div>
+          </div>
+        </div>
+        <div class="col-1">
+          <label class="form-label" for="number" style="color: white">Phone number (mobile)</label>
+          <input class="form-control" id="number" type="text" formControlName="number"/>
+          <div *ngIf="number.invalid && (number.dirty || number.touched)">
+            <div *ngIf="number.errors?.['required']" class="text-error">
+              Number is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" formGroupName="address">
+        <div class="col-4">
+          <label class="form-label" for="streetName">Street</label>
+          <input class="form-control" id="streetName" type="text" formControlName="streetName"/>
+          <div *ngIf="streetName.invalid && (streetName.dirty || streetName.touched)">
+            <div *ngIf="streetName.errors?.['required']" class="text-error">
+              Street name is required.
+            </div>
+          </div>
+        </div>
+        <div class="col-1">
+          <label class="form-label" for="houseNumber">Number</label>
+          <input class="form-control" id="houseNumber" type="text" formControlName="houseNumber"/>
+          <div *ngIf="houseNumber.invalid && (houseNumber.dirty || houseNumber.touched)">
+            <div *ngIf="houseNumber.errors?.['required']" class="text-error">
+              House number is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" formGroupName="address">
+        <div class="col-1">
+          <label class="form-label" for="postalCode">Postalcode</label>
+          <input class="form-control" id="postalCode" type="text" formControlName="postalCode"/>
+          <div *ngIf="postalCode.invalid && (postalCode.dirty || postalCode.touched)">
+            <div *ngIf="postalCode.errors?.['required']" class="text-error">
+              Postal code is required.
+            </div>
+          </div>
+        </div>
+        <div class="col-1">
+          <label class="form-label" for="country">Country</label>
+          <select id="country" class="form-select" formControlName="country">
+            <option>France</option>
+            <option>Germany</option>
+            <option>Belgium</option>
+          </select>
+          <div *ngIf="country.invalid && (country.dirty || country.touched)">
+            <div *ngIf="country.errors?.['required']" class="text-error">
+              Country is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <button class="col-4 btn btn-create" type="submit" [disabled]="!updateCustomerForm.valid" (click)="updateCustomer()">
+          UPDATE
+        </button>
+        <button class="col-1 btn"(click)="cancel()">CANCEL</button>
+      </div>
+    </form>
+  </section>
+</main>
+</body>
+</html>

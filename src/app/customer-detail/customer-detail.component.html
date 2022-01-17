@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order</title>
+  <link href='/styles.css' rel='stylesheet'/>
+</head>
+<body>
+<main>
+  <section>
+    <h3 class="section-title" style="border-bottom: darkgray solid 1px;padding-bottom: 1em; margin-bottom: 1em">
+      Customer {{customer.id}}</h3>
+    <div class="row">
+      <div class="col-1">
+        <label class="form-label">Firstname</label>
+        <div class="grey-box">
+          {{customer.firstname}}
+        </div>
+      </div>
+      <div class="col-1">
+        <label class="form-label">Lastname</label>
+        <div class="grey-box">
+          {{customer.lastname}}
+        </div>
+      </div>
+    </div>
+    <div class="row" formGroupName="email">
+      <div class="col-1">
+        <label class="form-label">Email</label>
+        <div class="grey-box">
+          {{customer.email.localPart}}
+        </div>
+      </div>
+      <div>
+        <label class="form-label" style="color: white">@</label>
+        <span style="font-size: 30px; border: black solid 1px; background-color:papayawhip">@</span>
+      </div>
+      <div class="col-1">
+        <label class="form-label" style="color: white">Domain</label>
+        <div class="grey-box">
+          {{customer.email.domain}}
+        </div>
+      </div>
+    </div>
+    <div class="row" formGroupName="phoneNumber">
+      <div class="col-1">
+        <label class="form-label">Phone number (mobile)</label>
+        <div class="grey-box">
+          {{customer.phoneNumber.countryCallingCode}}
+        </div>
+      </div>
+      <div class="col-1">
+        <label class="form-label" style="color: white">Phone number (mobile)</label>
+        <div class="grey-box">
+          {{customer.phoneNumber.number}}
+        </div>
+      </div>
+    </div>
+    <div class="row" formGroupName="address">
+      <div class="col-4">
+        <label class="form-label">Street</label>
+        <div class="grey-box">
+          {{customer.address.streetName}}
+        </div>
+      </div>
+      <div class="col-1">
+        <label class="form-label">Number</label>
+        <div class="grey-box">
+          {{customer.address.houseNumber}}
+        </div>
+      </div>
+    </div>
+    <div class="row" formGroupName="address">
+      <div class="col-1">
+        <label class="form-label">Postalcode</label>
+        <div class="grey-box">
+          {{customer.address.postalCode}}
+        </div>
+      </div>
+      <div class="col-1">
+        <label class="form-label">Country</label>
+        <div class="grey-box">
+          {{customer.address.country}}
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <button class="col-4 btn btn-create" type="submit">EDIT</button>
+      <button class="col-1 btn">CANCEL</button>
+    </div>
+  </section>
+</main>
+</body>
+</html>

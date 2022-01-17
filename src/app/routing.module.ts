@@ -6,6 +6,7 @@ import {ItemDetailComponent} from "./item-detail/item-detail.component";
 import {UpdateItemComponent} from "./update-item/update-item.component";
 import {CustomerListComponent} from "./customer-list/customer-list.component";
 import {CreateCustomerComponent} from "./create-customer/create-customer.component";
+import {CustomerDetailComponent} from "./customer-detail/customer-detail.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'items', pathMatch:'full'},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'item-detail/:id',component:ItemDetailComponent},
   {path:'update-item/:id',component:UpdateItemComponent},
   {path:'customers',component:CustomerListComponent},
-  {path:'create-customer',component:CreateCustomerComponent}
+  {path:'create-customer',component:CreateCustomerComponent},
+  {path:'customer-detail/:id',component:CustomerDetailComponent}
 ];
 
 

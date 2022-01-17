@@ -15,6 +15,7 @@ import { UpdateItemComponent } from './update-item/update-item.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { LastNameFilterPipe } from './last-name-filter.pipe';
 import { CreateCustomerComponent } from './create-customer/create-customer.component';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CreateCustomerComponent } from './create-customer/create-customer.compo
     UpdateItemComponent,
     CustomerListComponent,
     LastNameFilterPipe,
-    CreateCustomerComponent
+    CreateCustomerComponent,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,

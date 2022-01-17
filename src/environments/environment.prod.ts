@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendUrl: 'https://project-order-tm.heroku.com'
+  backendUrl: 'https://project-order-tm.herokuapp.com'
 };

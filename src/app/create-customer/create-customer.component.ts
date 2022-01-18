@@ -15,7 +15,8 @@ export class CreateCustomerComponent implements OnInit {
     lastname: ['', Validators.required],
     email: this.formBuilder.group({
       localPart:  ['', Validators.required],
-      domain:  ['', Validators.required]
+      domain:  ['', Validators.required],
+      complete : ''
     }),
     phoneNumber: this.formBuilder.group({
       countryCallingCode:  ['', Validators.required],
